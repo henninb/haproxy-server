@@ -7,6 +7,7 @@ services:
     hostname: haproxy-server
     ports:
       - "80:80"
+      - "8404:8404"
     networks:
       - mynetwork
     depends_on:
