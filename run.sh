@@ -34,8 +34,8 @@ elif [ "$platform" = "docker" ]; then
   echo docker logs haproxy-server
 
   if command -v docker-compose; then
-    docker-compose build
-    docker-compose up -d
+    docker compose build
+    docker compose up -d
   else
     docker build -t haproxy-server .
     docker run --name=haproxy-server -h haproxy-server -h haproxy-server --restart unless-stopped -p 443:443 -d haproxy-server
